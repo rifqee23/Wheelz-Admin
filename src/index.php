@@ -6,7 +6,7 @@
     <title>Dashboard Admin</title>
     <link rel="stylesheet" href="output.css" />
   </head>
-  <body class="bg-root">
+  <body class="bg-root dark:bg-slate-600">
     <header class="fixed w-full bg-primary px-4 py-4">
       <nav class="flex items-center justify-between mx-auto max-w-[115rem]">
         <a href="#" class="text-white font-bold text-2xl"
@@ -157,5 +157,8 @@
 
       setInterval(waktu, 1000);
     </script>
+
+  <script src="./script/darkMode.js"></script>
+
   </body>
 </html>

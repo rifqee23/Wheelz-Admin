@@ -1,7 +1,7 @@
 <?php
 
 include("koneksi.php");
-
+var_dump($_POST);
 if(isset($_POST['submit'])) {
   $model = $_POST['model'];
   $nopol = $_POST['nopol'];
