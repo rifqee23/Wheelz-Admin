@@ -40,6 +40,8 @@ $result = mysqli_query($conn, $sql);
     </header>
 
     <div class="flex">
+      <!-- Side bar -->
+
       <aside class="w-full h-screen max-w-xs bg-primary">
         <nav class="pt-[4.5rem]">
           <p class="p-4 text-center border">
@@ -68,6 +70,9 @@ $result = mysqli_query($conn, $sql);
         </nav>
       </aside>
 
+      <!-- End SIde bar -->
+
+      <!-- Main section -->
       <main class="w-full pt-20">
       <button type="button" class="inline-flex items-center px-3 py-2 text-sm text-white rounded-full hs-dark-mode hs-dark-mode-active:hidden gap-x-2 bg-white/10 hover:bg-white/20" data-hs-theme-click-value="dark">
         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -188,159 +193,14 @@ $result = mysqli_query($conn, $sql);
               class="overflow-hidden border rounded-lg dark:border-neutral-700"
               >
              
-                <table
-                  class="w-full divide-y divide-gray-200 dark:divide-neutral-700"
-                >
-                  <thead>
-                    <tr>
-
-                    <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                       gambar
-                      </th>
-
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                        Model
-                      </th>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                        nomor polisi
-                      </th>
-                      <th
-                        scope="col"
-                        class="py-3 text-xs font-medium text-gray-500 uppercase ps-6 text-start dark:text-neutral-500"
-                      >
-                        nama mobil
-                      </th>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                        seat
-                      </th>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                        car only
-                      </th>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                        car only driver
-                      </th>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                        car only driver fuel
-                      </th>
-                      <th
-                        scope="col"
-                        class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500"
-                      >
-                        Action
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody
-                    class="divide-y divide-gray-200 dark:divide-neutral-700"
-                  >
-
-                  <?php if (mysqli_num_rows($result) > 0) : ?>
-                    <?php while($row = mysqli_fetch_assoc($result)) : ?>
-                  
-                    <tr>
-
-                    <td
-                        class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                        <img class="w-40" src="./asset/carImg/<?php echo $row["gambar"] ?>" alt="">
-                      </td>
-
-                      <td
-                        class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                        <?php echo $row["model"] ?>
-                      </td>
-                      <td
-                        class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                      <?php echo $row["nomor_polisi"] ?>
-                      </td>
-                      <td
-                        class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                      <?php echo $row["nama_mobil"] ?>
-                      </td>
-
-                      <td
-                        class="px-8 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                      <?php echo $row["seat"] ?>
-                      </td>
-
-                      <td
-                        class="px-8 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                      <?php echo "Rp." . $row["car_only"] . ",00" ?>
-                      </td>
-
-                      <td
-                        class="px-8 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                      <?php echo "Rp." . $row["car_only_driver"] . ",00" ?>
-                      </td>
-                      
-                      <td
-                        class="px-8 py-4 text-sm text-gray-800 whitespace-nowrap dark:text-neutral-200"
-                      >
-                      <?php echo "Rp." . $row["car_only_driver_fuel"] . ",00" ?>
-                      </td>
-
-                      <td
-                        class="px-6 py-4 text-sm font-medium whitespace-nowrap text-start"
-                      >
-                      <div>
-                        <button
-                          type="button"
-                          class="inline-flex items-center text-sm font-semibold text-blue-600 border border-transparent rounded-lg gap-x-2 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400"
-                        >
-                          Edit
-                        </button>
-                      </div>
-
-                      <div>
-                        <button
-                          type="button"
-                          class="inline-flex items-center text-sm font-semibold text-blue-600 border border-transparent rounded-lg gap-x-2 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400"
-                        >
-                          Delete
-                        </button>
-
-                      </div>
-                      </td>
-                    </tr>
-                   
-                    <?php endwhile; ?>
-                  <?php endif; ?>
-                    
-                  </tbody>
-                </table>
+                <?php include("layout/tableInventaris.php") ?>
                
               </div>
             </div>
           </div>
         </div>
       </main>
+      <!-- End Main Section -->
     </div>
 
     <script src="https://kit.fontawesome.com/c4ce7ec2a0.js" crossorigin="anonymous"></script>
