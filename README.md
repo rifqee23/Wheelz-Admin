@@ -27,21 +27,24 @@ Welcome to the Car Rental Admin Website repository! This project is designed to 
     ```
 2. Navigate to the project directory:
     ```sh
-    cd car-rental-admin
+    cd Wheelz-Admin
     ```
 3. Install the required dependencies:
     ```sh
     npm install
     ```
-4. Set up the database:
-    - Configure your database connection in the `.env` file.
-    - Run the database migrations:
+4. Set up Tailwindcs:
+    
         ```sh
-        npx sequelize-cli db:migrate
+        npm install -D tailwindcss
         ```
-5. Start the development server:
+       ```sh
+        npx tailwindcss init
+        ```
+   
+6. Start tailwind:
     ```sh
-    npm start
+    npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
     ```
 
 ## Usage
