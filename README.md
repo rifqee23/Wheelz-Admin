@@ -39,6 +39,10 @@ Welcome to the Car Rental Admin Website repository! This project is designed to 
    npm install -D tailwindcss
    ```
 
+   ```sh
+   npx tailwindcss init
+   ```
+
    
 6. Start tailwind:
     ```sh
