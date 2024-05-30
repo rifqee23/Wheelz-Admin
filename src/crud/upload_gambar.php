@@ -12,8 +12,9 @@ if(isset($_POST['submit'])) {
   $fuel = $_POST['fuel'];
 
   // upload
-  $folder = "/var/www/html/wheelz admin/src/asset/carImg/";
-  $folder1 = "/var/www/html/adsi/src/mobil/";
+
+  $folder = "/opt/lampp/htdocs/wheelz\ admin/src/asset/carImg";
+  $folder1 = "/opt/lampp/htdocs/adsi/src/mobil/";
 
   // Mendapatkan nama file asli
   $nama_file_asli = basename($_FILES["gambar"]["name"]);
