@@ -84,7 +84,7 @@
                                 </button>
                             </div>
 
-                            <div>
+                            <div class="mt-4">
                                 <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
                                     Delete
                                 </button>
