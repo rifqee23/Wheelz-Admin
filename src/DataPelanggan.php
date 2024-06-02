@@ -19,7 +19,7 @@ $result = mysqli_query($conn, $sql);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Mobil</title>
+    <title>Data Pelanggan</title>
     <link rel="stylesheet" href="output.css" />
   </head>
   <body class="bg-root dark:bg-slate-600">
@@ -56,7 +56,7 @@ $result = mysqli_query($conn, $sql);
             <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
           </p>
           <p class="p-4 text-center border">
-            <a href="#" class="font-semibold text-white">Data Pelanggan</a>
+            <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
           </p>
           <p class="p-4 text-center border">
             <a href="#" class="font-semibold text-white">Pembayaran & Refund</a>
@@ -126,7 +126,7 @@ $result = mysqli_query($conn, $sql);
             <div class="flex flex-col w-full border shadow-sm pointer-events-auto bg-root rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
               <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
                 <h3 class="w-full font-bold text-center text-gray-800 dark:text-white">
-                  Data Mobil
+                  Data Pelanggan
                 </h3>
                 <button type="button" class="flex items-center justify-center text-sm font-semibold text-gray-800 border border-transparent rounded-full size-7 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-vertically-centered-modal">
                   <span class="sr-only">Close</span>
