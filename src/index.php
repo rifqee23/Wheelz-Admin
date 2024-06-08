@@ -27,7 +27,7 @@
       <aside class="w-full h-screen bg-primary max-w-xs">
         <nav class="pt-[4.5rem]">
           <p class="text-center border p-4">
-            <a href="index.php" class="text-white font-semibold">Dashboard</a>
+            <a href="index.php" class="text-blue-400 font-semibold">Dashboard</a>
           </p>
           <p class="text-center border p-4">
             <a href="DataMobil.php" class="text-white font-semibold">Data Mobil</a>
