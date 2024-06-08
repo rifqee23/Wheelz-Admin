@@ -141,37 +141,18 @@ $result = mysqli_query($conn, $sql);
               <div class="flex">
                 <div class="w-1/2">
                   <div class="max-w-sm p-4">
-                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Model</label>
-                      <input type="text" id="input-label" name="model" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi">
+                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Nama</label>
+                      <input type="text" id="input-label" name="nama" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Budi">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nomor Polisi</label>
-                      <input type="text" id="input-label" name="nopol" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: BE 1234 AB">
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">E-Mail</label>
+                      <input type="text" id="input-label" name="email" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 123@gmail.com">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nama Mobil</label>
-                      <input type="text" id="input-label" name="mobil" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi AeT">
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">No Telpon</label>
+                      <input type="text" id="input-label" name="notelp" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 082453678634">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Seat</label>
-                      <input type="number" id="input-label" name="seat" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 4">
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Password</label>
+                      <input type="number" id="input-label" name="password" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Hallo123">
 
-                  </div>
-                </div>
-
-                <div class="w-1/2">
-                <div class="max-w-sm p-4">
-                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Car Only</label>
-                      <input type="text" id="input-label" name="only" oninput="formatNumber(this)" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
-
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver</label>
-                      <input type="text" id="input-label" name="driver" oninput="formatNumber(this)" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
-
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
-                      <input type="text" id="input-label" name="fuel" oninput="formatNumber(this)" class="block w-full px-4 py-3 mb-2 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
-
-                      <div class="max-w-sm">
-                      <label for="file-input" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
-                        <input type="file" name="gambar" id="file-input" class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 dark:file:bg-neutral-700 dark:file:text-neutral-400">
-                      </div>
-                      
                   </div>
                 </div>
               </div>
@@ -193,7 +174,7 @@ $result = mysqli_query($conn, $sql);
               class="overflow-hidden border rounded-lg dark:border-neutral-700"
               >
              
-                <?php include("layout/tableInventaris.php") ?>
+                <?php include("layout/tableDataPelanggan.php") ?>
                
               </div>
             </div>
