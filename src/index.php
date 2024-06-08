@@ -33,7 +33,7 @@
             <a href="DataMobil.php" class="text-white font-semibold">Data Mobil</a>
           </p>
           <p class="text-center border p-4">
-            <a href="#" class="text-white font-semibold">Inventaris</a>
+            <a href="inventaris.php" class="text-white font-semibold">Inventaris</a>
           </p>
           <p class="text-center border p-4">
             <a href="DataPelanggan.php" class="text-white font-semibold">Data Pelanggan</a>
