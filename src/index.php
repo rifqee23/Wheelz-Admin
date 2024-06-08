@@ -36,7 +36,7 @@
             <a href="#" class="text-white font-semibold">Inventaris</a>
           </p>
           <p class="text-center border p-4">
-            <a href="#" class="text-white font-semibold">Data Pelanggan</a>
+            <a href="DataPelanggan.php" class="text-white font-semibold">Data Pelanggan</a>
           </p>
           <p class="text-center border p-4">
             <a href="#" class="text-white font-semibold">Pembayaran & Refund</a>
