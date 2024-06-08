@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="date" id="inp"  name="" id="">
+    </form>
+
+    <form action="">
+        <input type="text" id="inp2">
+    </form>
+
+    <script>
+        const inp = document.getElementById("inp");
+        const inp2 = document.getElementById("inp2");
+
+        // Add event listener to update inp2 value whenever inp changes
+        inp.addEventListener("input", function() {
+            inp2.value = inp.value;
+        });
+    </script>
+</body>
+</html>
