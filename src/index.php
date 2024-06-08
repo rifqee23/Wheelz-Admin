@@ -45,7 +45,7 @@
             <a href="#" class="text-white font-semibold">Reservasi</a>
           </p>
           <p class="text-center border p-4">
-            <a href="#" class="text-white font-semibold">Chat</a>
+            <a href="Chat.php" class="text-white font-semibold">Chat</a>
           </p>
         </nav>
       </aside>
