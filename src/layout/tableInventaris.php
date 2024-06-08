@@ -2,6 +2,7 @@
                   class="w-full divide-y divide-gray-200 dark:divide-neutral-700"
                 >
                   <thead>
+              
                     <tr>
 
                     <th
@@ -45,9 +46,19 @@
                     </tr>
                   </thead>
                   <tbody
+
+                  
                     class="divide-y divide-gray-200 dark:divide-neutral-700"
                   >
-                  
+                  <?php
+                  include "crud/koneksi.php";
+                  $sql = "SELECT * FROM user";
+                  $rs = mysqli_query($conn, $sql);
+                  if(mysqli_num_rows($rs)) : 
+                    while ($row = mysqli_fetch_assoc($rs)):
+
+                  ?>
+
                     <tr>
 
                     <td
@@ -58,7 +69,9 @@
                       <td
                         class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200"
                       >
-                      Porche
+                      <?php
+                      echo $row ["nama"];
+                      ?>
                       </td>
                       <td
                         class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200"
@@ -91,6 +104,9 @@
                             </div>
                       </td>
                     </tr>
-                    
+                    <?php
+                    endwhile;
+                  endif;
+                    ?>
                   </tbody>
                 </table>

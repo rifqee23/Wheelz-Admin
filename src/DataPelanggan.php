@@ -1,17 +1,3 @@
-<?php
-
-include("./crud/koneksi.php");
-
-$num_per_page = 9;
-$rs = mysqli_query($conn, "SELECT * FROM Vehicle");
-$jumlah_data = mysqli_num_rows($rs);
-
-$sql = "SELECT * FROM Vehicle LIMIT 0, $num_per_page";
-$result = mysqli_query($conn, $sql);
-
-?>
-
-
 
 
 <!doctype html>
