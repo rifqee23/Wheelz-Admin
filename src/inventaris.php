@@ -56,7 +56,7 @@ $result = mysqli_query($conn, $sql);
             <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
           </p>
           <p class="p-4 text-center border">
-            <a href="#" class="font-semibold text-white">Data Pelanggan</a>
+            <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
           </p>
           <p class="p-4 text-center border">
             <a href="#" class="font-semibold text-white">Pembayaran & Refund</a>
