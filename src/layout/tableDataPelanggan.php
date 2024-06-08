@@ -52,10 +52,14 @@
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-          yantokedaton18@gmail.com
+        <?php
+          echo $row["email"];
+          ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-          081216547462
+        <?php
+          echo $row["notelp"];
+          ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <div>
