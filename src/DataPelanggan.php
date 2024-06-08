@@ -2,7 +2,7 @@
 
 include("./crud/koneksi.php");
 
-$num_per_page =9;
+$num_per_page = 9;
 $rs = mysqli_query($conn, "SELECT * FROM Vehicle");
 $jumlah_data = mysqli_num_rows($rs);
 
@@ -16,64 +16,59 @@ $result = mysqli_query($conn, $sql);
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data Pelanggan</title>
-    <link rel="stylesheet" href="output.css" />
-  </head>
-  <body class="bg-root dark:bg-slate-600">
-    <header class="fixed w-full px-4 py-4 bg-primary">
-      <nav class="flex items-center justify-between mx-auto max-w-[115rem]">
-        <a href="#" class="text-2xl font-bold text-white"
-          >Wheelz Collaboration</a
-        >
 
-        <a
-          href="#"
-          class="flex items-center gap-2 text-2xl font-bold text-white"
-        >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Pelanggan</title>
+  <link rel="stylesheet" href="output.css" />
+</head>
+
+<body class="bg-root dark:bg-slate-600">
+  <header class="fixed w-full px-4 py-4 bg-primary">
+    <nav class="flex items-center justify-between mx-auto max-w-[115rem]">
+      <a href="#" class="text-2xl font-bold text-white">Wheelz Collaboration</a>
+
+      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
         <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-          Admin
-        </a>
+        Admin
+      </a>
+    </nav>
+  </header>
+
+  <div class="flex">
+    <!-- Side bar -->
+
+    <aside class="w-full h-screen max-w-xs bg-primary">
+      <nav class="pt-[4.5rem]">
+        <p class="p-4 text-center border">
+          <a href="index.php" class="font-semibold text-white">Dashboard</a>
+        </p>
+        <p class="p-4 text-center border">
+          <a href="DataMobil.php" class="font-semibold text-white">Data Mobil</a>
+        </p>
+        <p class="p-4 text-center border">
+          <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
+        </p>
+        <p class="p-4 text-center border">
+          <a href="DataPelanggan.php" class="font-semibold text-blue-400">Data Pelanggan</a>
+        </p>
+        <p class="p-4 text-center border">
+          <a href="#" class="font-semibold text-white">Pembayaran & Refund</a>
+        </p>
+        <p class="p-4 text-center border">
+          <a href="#" class="font-semibold text-white">Reservasi</a>
+        </p>
+        <p class="p-4 text-center border">
+          <a href="#" class="font-semibold text-white">Chat</a>
+        </p>
       </nav>
-    </header>
+    </aside>
 
-    <div class="flex">
-      <!-- Side bar -->
+    <!-- End SIde bar -->
 
-      <aside class="w-full h-screen max-w-xs bg-primary">
-        <nav class="pt-[4.5rem]">
-          <p class="p-4 text-center border">
-            <a href="index.php" class="font-semibold text-white">Dashboard</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="DataMobil.php" class="font-semibold text-white"
-              >Data Mobil</a
-            >
-          </p>
-          <p class="p-4 text-center border">
-            <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="DataPelanggan.php" class="font-semibold text-blue-400">Data Pelanggan</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="#" class="font-semibold text-white">Pembayaran & Refund</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="#" class="font-semibold text-white">Reservasi</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="#" class="font-semibold text-white">Chat</a>
-          </p>
-        </nav>
-      </aside>
-
-      <!-- End SIde bar -->
-
-      <!-- Main section -->
-      <main class="w-full pt-20">
+    <!-- Main section -->
+    <main class="w-full pt-20">
       <button type="button" class="inline-flex items-center px-3 py-2 text-sm text-white rounded-full hs-dark-mode hs-dark-mode-active:hidden gap-x-2 bg-white/10 hover:bg-white/20" data-hs-theme-click-value="dark">
         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
@@ -141,18 +136,37 @@ $result = mysqli_query($conn, $sql);
               <div class="flex">
                 <div class="w-1/2">
                   <div class="max-w-sm p-4">
-                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Nama</label>
-                      <input type="text" id="input-label" name="nama" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Budi">
+                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Model</label>
+                      <input type="text" id="input-label" name="model" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">E-Mail</label>
-                      <input type="text" id="input-label" name="email" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 123@gmail.com">
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nomor Polisi</label>
+                      <input type="text" id="input-label" name="nopol" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: BE 1234 AB">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">No Telpon</label>
-                      <input type="text" id="input-label" name="notelp" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 082453678634">
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nama Mobil</label>
+                      <input type="text" id="input-label" name="mobil" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi AeT">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Password</label>
-                      <input type="number" id="input-label" name="password" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Hallo123">
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Seat</label>
+                      <input type="number" id="input-label" name="seat" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 4">
 
+                  </div>
+                </div>
+
+                <div class="w-1/2">
+                <div class="max-w-sm p-4">
+                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Car Only</label>
+                      <input type="text" id="input-label" name="only" oninput="formatNumber(this)" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
+
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver</label>
+                      <input type="text" id="input-label" name="driver" oninput="formatNumber(this)" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
+
+                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
+                      <input type="text" id="input-label" name="fuel" oninput="formatNumber(this)" class="block w-full px-4 py-3 mb-2 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
+
+                      <div class="max-w-sm">
+                      <label for="file-input" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
+                        <input type="file" name="gambar" id="file-input" class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 dark:file:bg-neutral-700 dark:file:text-neutral-400">
+                      </div>
+                      
                   </div>
                 </div>
               </div>
@@ -174,7 +188,7 @@ $result = mysqli_query($conn, $sql);
               class="overflow-hidden border rounded-lg dark:border-neutral-700"
               >
              
-                <?php include("layout/tableDataPelanggan.php") ?>
+                <?php include("layout/tableInventaris.php") ?>
                
               </div>
             </div>
@@ -184,23 +198,22 @@ $result = mysqli_query($conn, $sql);
       <!-- End Main Section -->
     </div>
 
-    <script src="https://kit.fontawesome.com/c4ce7ec2a0.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/c4ce7ec2a0.js" crossorigin="anonymous"></script>
 
-    <script src="./../node_modules/preline/dist/preline.js"></script>
+  <script src="./../node_modules/preline/dist/preline.js"></script>
 
-    <script>
+  <script>
+    function formatNumber(input) {
+      // Remove any existing commas
+      let num = input.value.replace(/\D/g, '');
 
-      function formatNumber(input) {
-            // Remove any existing commas
-            let num = input.value.replace(/\D/g, '');
-            
-            // Format the number with commas
-            let formattedNum = num.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+      // Format the number with commas
+      let formattedNum = num.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-            // Update the input value with the formatted number
-            input.value = formattedNum;
-        }
+      // Update the input value with the formatted number
+      input.value = formattedNum;
+    }
+  </script>
+</body>
 
-    </script>
-  </body>
 </html>
