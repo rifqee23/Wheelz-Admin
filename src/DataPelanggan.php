@@ -91,31 +91,6 @@ $result = mysqli_query($conn, $sql);
       </button>
 
         <!-- Modal -->
-
-
-
-      <div>
-        <button type="button" class="inline-flex items-center px-1 py-1 text-base font-semibold text-white border border-transparent rounded-lg pe-2 ms-4 gap-x-2 bg-primary hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#hs-vertically-centered-modal">
-        <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-plus"
-              width="30"
-              height="30"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="#00b341"
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M12 5l0 14" />
-              <path d="M5 12l14 0" />
-            </svg>
-          Tambah
-        </button>
-         </div>
-
         <div id="hs-vertically-centered-modal" class="hs-overlay hidden size-full fixed top-0 start-20 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
           <div class="hs-overlay-open:mt-7 w-full  hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0  opacity-0 ease-out transition-all lg:max-w-3xl m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
             <div class="flex flex-col w-full border shadow-sm pointer-events-auto bg-root rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
@@ -150,28 +125,6 @@ $result = mysqli_query($conn, $sql);
 
                   </div>
                 </div>
-
-                <div class="w-1/2">
-                <div class="max-w-sm p-4">
-                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Car Only</label>
-                      <input type="text" id="input-label" name="only" oninput="formatNumber(this)" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
-
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver</label>
-                      <input type="text" id="input-label" name="driver" oninput="formatNumber(this)" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
-
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
-                      <input type="text" id="input-label" name="fuel" oninput="formatNumber(this)" class="block w-full px-4 py-3 mb-2 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
-
-                      <div class="max-w-sm">
-                      <label for="file-input" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
-                        <input type="file" name="gambar" id="file-input" class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 dark:file:bg-neutral-700 dark:file:text-neutral-400">
-                      </div>
-                      
-                  </div>
-                </div>
-              </div>
-              <div class="flex items-center justify-end px-4 py-3 border-t dark:border-neutral-700">
-                <button type="submit" name="submit" class="px-3 py-2 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700">Tambah Data</button>
               </div>
               
               </form>
@@ -188,7 +141,7 @@ $result = mysqli_query($conn, $sql);
               class="overflow-hidden border rounded-lg dark:border-neutral-700"
               >
              
-                <?php include("layout/tableInventaris.php") ?>
+                <?php include("layout/tableDataPelanggan.php") ?>
                
               </div>
             </div>
