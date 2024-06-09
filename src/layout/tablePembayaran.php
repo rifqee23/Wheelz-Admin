@@ -3,17 +3,17 @@
     <tr>
 
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
-        No
+        Ref
       </th>
 
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
-        Nama
+        Kendaraan
       </th>
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
-        Alamat
+        Waktu
       </th>
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
-        Bukti Pembayaran
+        Harga
       </th>
       <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase ps-6 text-start dark:text-neutral-500">
         Status
@@ -43,17 +43,22 @@
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <?php
-          echo $row["nama"];
+          echo $row["ref"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <?php
-          echo $row["alamat"];
+          echo $row["kendaraan"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
         <?php
-          echo $row["buktipembayaran"];
+          echo $row["waktu"];
+          ?>
+        </td>
+        <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
+        <?php
+          echo $row["harga"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
