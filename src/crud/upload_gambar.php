@@ -1,7 +1,9 @@
 <?php
 
 include("koneksi.php");
-var_dump($_POST);
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 if (isset($_POST['submit'])) {
   $model = $_POST['model'];
   $nopol = $_POST['nopol'];
@@ -13,13 +15,16 @@ if (isset($_POST['submit'])) {
 
   // upload
 
-  $folder = "/opt/lampp/htdocs/wheelz\ admin/src/asset/carImg";
+  $folder = "/opt/lampp/htdocs/wheelz admin/src/asset/carImg/";
+  $folder1 = "/opt/lampp/htdocs/adsi/src/mobil/";
 
   // Mendapatkan nama file asli
   $nama_file_asli = basename($_FILES["gambar"]["name"]);
 
   // Menyusun path lengkap untuk file di folder pertama dan kedua
   $file_in_folder = $folder . $nama_file_asli;
+  $file_in_folder1 = $folder1 . $nama_file_asli; // <-- Definisikan variabel ini
+
 
   // Status awal
   $status = 1;

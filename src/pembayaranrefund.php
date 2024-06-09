@@ -23,7 +23,7 @@
   <div class="flex">
     <!-- Side bar -->
 
-    <aside class="w-full h-screen max-w-xs bg-primary">
+    <aside class="w-full h-full max-w-xs bg-primary">
       <nav class="pt-[4.5rem]">
         <p class="p-4 text-center border">
           <a href="index.php" class="font-semibold text-white">Dashboard</a>
@@ -74,66 +74,64 @@
         Light
       </button>
 
-        <!-- Modal -->
-        <div id="hs-vertically-centered-modal" class="hs-overlay hidden size-full fixed top-0 start-20 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
-          <div class="hs-overlay-open:mt-7 w-full  hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0  opacity-0 ease-out transition-all lg:max-w-3xl m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
-            <div class="flex flex-col w-full border shadow-sm pointer-events-auto bg-root rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
-              <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
-                <h3 class="w-full font-bold text-center text-gray-800 dark:text-white">
-                  Data Pelanggan
-                </h3>
-                <button type="button" class="flex items-center justify-center text-sm font-semibold text-gray-800 border border-transparent rounded-full size-7 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-vertically-centered-modal">
-                  <span class="sr-only">Close</span>
-                  <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 6 6 18"></path>
-                    <path d="m6 6 12 12"></path>
-                  </svg>
-                </button>
-              </div>
+      <!-- Modal -->
+      <div id="hs-vertically-centered-modal" class="hs-overlay hidden size-full fixed top-0 start-20 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
+        <div class="hs-overlay-open:mt-7 w-full  hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-0  opacity-0 ease-out transition-all lg:max-w-3xl m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
+          <div class="flex flex-col w-full border shadow-sm pointer-events-auto bg-root rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+            <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
+              <h3 class="w-full font-bold text-center text-gray-800 dark:text-white">
+                Data Pelanggan
+              </h3>
+              <button type="button" class="flex items-center justify-center text-sm font-semibold text-gray-800 border border-transparent rounded-full size-7 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-700" data-hs-overlay="#hs-vertically-centered-modal">
+                <span class="sr-only">Close</span>
+                <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+            </div>
 
             <form action="./crud/upload_gambar.php" method="post" enctype="multipart/form-data">
               <div class="flex">
                 <div class="w-1/2">
                   <div class="max-w-sm p-4">
-                      <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Model</label>
-                      <input type="text" id="input-label" name="model" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi">
+                    <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Model</label>
+                    <input type="text" id="input-label" name="model" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nomor Polisi</label>
-                      <input type="text" id="input-label" name="nopol" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: BE 1234 AB">
+                    <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nomor Polisi</label>
+                    <input type="text" id="input-label" name="nopol" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: BE 1234 AB">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nama Mobil</label>
-                      <input type="text" id="input-label" name="mobil" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi AeT">
+                    <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Nama Mobil</label>
+                    <input type="text" id="input-label" name="mobil" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi AeT">
 
-                      <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Seat</label>
-                      <input type="number" id="input-label" name="seat" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 4">
+                    <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Seat</label>
+                    <input type="number" id="input-label" name="seat" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 4">
 
                   </div>
                 </div>
               </div>
-              
-              </form>
+
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Modal -->
+
+      <div class="flex flex-col">
+        <div class="-m-1.5 overflow-x-auto">
+          <div class="p-1.5 min-w-full  inline-block align-middle">
+            <div class="overflow-hidden border rounded-lg dark:border-neutral-700">
+
+              <?php include("layout/tableDataPelanggan.php") ?>
+
             </div>
           </div>
         </div>
-
-        <!-- End Modal -->
-
-        <div class="flex flex-col">
-          <div class="-m-1.5 overflow-x-auto">
-            <div class="p-1.5 min-w-full  inline-block align-middle">
-              <div
-              class="overflow-hidden border rounded-lg dark:border-neutral-700"
-              >
-             
-                <?php include("layout/tableDataPelanggan.php") ?>
-               
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <!-- End Main Section -->
-    </div>
+      </div>
+    </main>
+    <!-- End Main Section -->
+  </div>
 
   <script src="https://kit.fontawesome.com/c4ce7ec2a0.js" crossorigin="anonymous"></script>
 
