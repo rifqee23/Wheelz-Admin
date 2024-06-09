@@ -89,7 +89,7 @@ $result = mysqli_query($conn, $sql);
           <a href="pembayaranrefund.php" class="font-semibold text-white">Pembayaran & Refund</a>
         </p>
         <p class="p-4 text-center border">
-          <a href="#" class="font-semibold text-white">Reservasi</a>
+          <a href="reservasi.php" class="font-semibold text-white">Reservasi</a>
         </p>
         <p class="p-4 text-center border">
           <a href="Chat.php" class="font-semibold text-blue-400">Chat</a>

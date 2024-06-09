@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Pelanggan</title>
+  <title>Pembayaran & Refund</title>
   <link rel="stylesheet" href="output.css" />
 </head>
 
@@ -35,13 +35,13 @@
           <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
         </p>
         <p class="p-4 text-center border">
-          <a href="DataPelanggan.php" class="font-semibold text-blue-400">Data Pelanggan</a>
+          <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
         </p>
         <p class="p-4 text-center border">
           <a href="pembayaranrefund.php" class="font-semibold text-white">Pembayaran & Refund</a>
         </p>
         <p class="p-4 text-center border">
-          <a href="reservasi.php" class="font-semibold text-white">Reservasi</a>
+          <a href="reservasi.php" class="font-semibold text-blue-400">Reservasi</a>
         </p>
         <p class="p-4 text-center border">
           <a href="Chat.php" class="font-semibold text-white">Chat</a>
