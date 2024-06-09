@@ -163,7 +163,7 @@ $result = mysqli_query($conn, $sql);
                       <input type="text" id="input-label" name="fuel" oninput="formatNumber(this)" class="block w-full px-4 py-3 mb-2 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
 
                       <div class="max-w-sm">
-                      <label for="file-input" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
+                      <label for="file-input" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Input Photo</label>
                         <input type="file" name="gambar" id="file-input" class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 dark:file:bg-neutral-700 dark:file:text-neutral-400">
                       </div>
                       
