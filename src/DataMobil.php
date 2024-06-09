@@ -61,9 +61,44 @@ $result = mysqli_query($conn, $sql);
           <a href="Chat.php" class="font-semibold text-white">Chat</a>
         </p>
       </nav>
+
     </aside>
 
     <main class="w-full pt-20">
+
+    </header>
+
+    <div class="flex">
+      <aside class="w-full h-screen max-w-xs bg-primary">
+        <nav class="pt-[4.5rem]">
+          <p class="p-4 text-center border">
+            <a href="index.php" class="font-semibold text-white">Dashboard</a>
+          </p>
+          <p class="p-4 text-center border">
+            <a href="DataMobil.php" class="font-semibold text-blue-400"
+              >Data Mobil</a
+            >
+          </p>
+          <p class="p-4 text-center border">
+            <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
+          </p>
+          <p class="p-4 text-center border">
+            <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
+          </p>
+          <p class="p-4 text-center border">
+            <a href="pembayaranrefund.php" class="font-semibold text-white">Pembayaran & Refund</a>
+          </p>
+          <p class="p-4 text-center border">
+            <a href="reservasi.php" class="font-semibold text-white">Reservasi</a>
+          </p>
+          <p class="p-4 text-center border">
+            <a href="Chat.php" class="font-semibold text-white">Chat</a>
+          </p>
+        </nav>
+      </aside>
+
+      <main class="w-full pt-20">
+
       <button type="button" class="inline-flex items-center px-3 py-2 text-sm text-white rounded-full hs-dark-mode hs-dark-mode-active:hidden gap-x-2 bg-white/10 hover:bg-white/20" data-hs-theme-click-value="dark">
         <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
