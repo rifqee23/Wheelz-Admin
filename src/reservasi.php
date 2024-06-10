@@ -120,7 +120,7 @@
         <div class="-m-1.5 overflow-x-auto">
           <div class="p-1.5 min-w-full  inline-block align-middle">
             <div class="overflow-hidden border rounded-lg dark:border-neutral-700">
-            <h1 class="mb-5 text-2xl font-bold text-center text-white">Reservasi</h1>
+              <h1 class="mb-5 text-2xl font-bold text-center text-white">Reservasi Pembayaran</h1>
               <div class="container mx-auto overflow-hidden border rounded-lg dark:border-neutral-700">
                 <?php include("layout/tableReservasi.php") ?>
                 <nav class="flex items-center gap-x-1">
