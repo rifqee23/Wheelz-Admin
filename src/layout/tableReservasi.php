@@ -3,7 +3,7 @@
     <tr>
 
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
-        id
+        Id
       </th>
 
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
@@ -15,8 +15,8 @@
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
         Nama Mobil
       </th>
-      <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase ps-6 text-start dark:text-neutral-500">
-        Tanggan Rental
+      <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
+        Tanggal Rental
       </th>
       <th scope="col" class="py-3 text-xs font-medium text-gray-500 uppercase ps-6 text-start dark:text-neutral-500">
         Status
@@ -33,9 +33,23 @@
 
     <tr>
 
-      <?php
+    <?php
       include "crud/koneksi.php";
-      $sql = "SELECT u.nama, r.alamat, u.namamobil, u.tglrental, u.status FROM rincian r JOIN user u ON r.id_user = u.id;";
+      $sql = "SELECT 
+      u.nama,
+      r.alamat,
+      v.nama_mobil,
+      r.tanggalAwal,
+      r.tanggalTujuan,
+      p.Status
+  JOIN 
+      user u ON p.id_user = u.id
+  JOIN 
+      Vehicle v ON p.id_vehicle = v.id
+  JOIN 
+      pembayaran p ON p.id_pembayaran = p.id
+  JOIN 
+      rincian r ON p.id_rincian = r.id_pemesanan";
       $rs = mysqli_query($conn, $sql);
       $i = 1;
       while ($row = mysqli_fetch_assoc($rs)) :
@@ -55,30 +69,30 @@
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-        <?php
-          echo $row["namamobil"];
+          <?php
+          echo $row["nama_mobil"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-        <?php
-          echo $row["tglrental"];
+          <?php
+          echo $row["tanggan_rental"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-        <?php
+          <?php
           echo $row["status"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <div>
             <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Edit
+              Konfirmasi
             </button>
           </div>
 
           <div class="mt-4">
             <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Delete
+              Tolak
             </button>
           </div>
         </td>
