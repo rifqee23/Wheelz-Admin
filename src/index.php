@@ -21,7 +21,7 @@
   </header>
 
   <div class="flex">
-    <aside class="w-full h-full max-w-xs bg-primary">
+    <aside class="w-full h-screen max-w-xs bg-primary">
       <nav class="pt-[4.5rem]">
         <p class="p-4 text-center border">
           <a href="index.php" class="font-semibold text-blue-400">Dashboard</a>
@@ -29,9 +29,7 @@
         <p class="p-4 text-center border">
           <a href="DataMobil.php" class="font-semibold text-white">Data Mobil</a>
         </p>
-        <p class="p-4 text-center border">
-          <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
-        </p>
+
         <p class="p-4 text-center border">
           <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
         </p>

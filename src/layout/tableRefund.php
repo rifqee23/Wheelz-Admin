@@ -32,7 +32,7 @@
 
       <?php
       include "crud/koneksi.php";
-      $sql = "SELECT u.nama, u.norek, u.buktipembayaran, u.status FROM rincian r JOIN user u ON r.id_user = u.id;";
+      $sql = "SELECT * FROM refund  ";
       $rs = mysqli_query($conn, $sql);
       $i = 1;
       while ($row = mysqli_fetch_assoc($rs)) :
@@ -52,25 +52,25 @@
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-        <?php
-          echo $row["buktipembayaran"];
+          <?php
+          echo $row["bukti_bayar"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-        <?php
+          <?php
           echo $row["status"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <div>
             <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Edit
+              Konfirmasi
             </button>
           </div>
 
           <div class="mt-4">
             <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Delete
+              Tolak
             </button>
           </div>
         </td>

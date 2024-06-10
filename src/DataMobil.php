@@ -2,11 +2,8 @@
 
 include("./crud/koneksi.php");
 
-$num_per_page = 9;
-$rs = mysqli_query($conn, "SELECT * FROM Vehicle");
-$jumlah_data = mysqli_num_rows($rs);
 
-$sql = "SELECT * FROM Vehicle LIMIT 0, $num_per_page";
+$sql = "SELECT * FROM Vehicle LIMIT 5";
 $result = mysqli_query($conn, $sql);
 
 ?>
@@ -36,18 +33,16 @@ $result = mysqli_query($conn, $sql);
     </nav>
   </header>
 
-  <div class="flex">
-    <aside class="w-full h-full max-w-xs bg-primary">
-      <nav class="pt-[4.5rem]">
+  <div class="flex min-h-screen ">
+    <aside class="flex flex-col w-full max-w-xs bg-primary">
+      <nav class="pt-[4.5rem] flex-grow">
         <p class="p-4 text-center border">
           <a href="index.php" class="font-semibold text-white">Dashboard</a>
         </p>
         <p class="p-4 text-center border">
           <a href="DataMobil.php" class="font-semibold text-blue-400">Data Mobil</a>
         </p>
-        <p class="p-4 text-center border">
-          <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
-        </p>
+
         <p class="p-4 text-center border">
           <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
         </p>
@@ -55,76 +50,45 @@ $result = mysqli_query($conn, $sql);
           <a href="pembayaranrefund.php" class="font-semibold text-white">Pembayaran & Refund</a>
         </p>
         <p class="p-4 text-center border">
-          <a href="#" class="font-semibold text-white">Reservasi</a>
+          <a href="reservasi.php" class="font-semibold text-white">Reservasi</a>
         </p>
         <p class="p-4 text-center border">
           <a href="Chat.php" class="font-semibold text-white">Chat</a>
         </p>
       </nav>
-
     </aside>
 
     <main class="w-full pt-20">
 
-    </header>
+      <div class="mb-5 ps-5">
+        <button type="button" class="inline-flex items-center px-3 py-2 text-sm text-white rounded-full hs-dark-mode hs-dark-mode-active:hidden gap-x-2 bg-white/10 hover:bg-white/20" data-hs-theme-click-value="dark">
+          <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+          Dark
+        </button>
+        <button type="button" class="items-center hidden px-3 py-2 text-sm text-white rounded-full hs-dark-mode hs-dark-mode-active:inline-flex gap-x-2 bg-white/10 hover:bg-white/20" data-hs-theme-click-value="light">
+          <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          Light
+        </button>
 
-    <div class="flex">
-      <aside class="w-full h-screen max-w-xs bg-primary">
-        <nav class="pt-[4.5rem]">
-          <p class="p-4 text-center border">
-            <a href="index.php" class="font-semibold text-white">Dashboard</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="DataMobil.php" class="font-semibold text-blue-400"
-              >Data Mobil</a
-            >
-          </p>
-          <p class="p-4 text-center border">
-            <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="pembayaranrefund.php" class="font-semibold text-white">Pembayaran & Refund</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="reservasi.php" class="font-semibold text-white">Reservasi</a>
-          </p>
-          <p class="p-4 text-center border">
-            <a href="Chat.php" class="font-semibold text-white">Chat</a>
-          </p>
-        </nav>
-      </aside>
-
-      <main class="w-full pt-20">
-
-      <button type="button" class="inline-flex items-center px-3 py-2 text-sm text-white rounded-full hs-dark-mode hs-dark-mode-active:hidden gap-x-2 bg-white/10 hover:bg-white/20" data-hs-theme-click-value="dark">
-        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
-        </svg>
-        Dark
-      </button>
-      <button type="button" class="items-center hidden px-3 py-2 text-sm text-white rounded-full hs-dark-mode hs-dark-mode-active:inline-flex gap-x-2 bg-white/10 hover:bg-white/20" data-hs-theme-click-value="light">
-        <svg class="flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2"></path>
-          <path d="M12 20v2"></path>
-          <path d="m4.93 4.93 1.41 1.41"></path>
-          <path d="m17.66 17.66 1.41 1.41"></path>
-          <path d="M2 12h2"></path>
-          <path d="M20 12h2"></path>
-          <path d="m6.34 17.66-1.41 1.41"></path>
-          <path d="m19.07 4.93-1.41 1.41"></path>
-        </svg>
-        Light
-      </button>
+      </div>
 
       <!-- Modal -->
 
 
 
-      <div>
+      <div class="mb-5">
         <button type="button" class="inline-flex items-center px-1 py-1 text-base font-semibold text-white border border-transparent rounded-lg pe-2 ms-4 gap-x-2 bg-primary hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" data-hs-overlay="#hs-vertically-centered-modal">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-plus" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#00b341" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -298,6 +262,25 @@ $result = mysqli_query($conn, $sql);
                 </tbody>
               </table>
 
+              <nav class="flex items-center gap-x-1">
+                <button type="button" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                  <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6"></path>
+                  </svg>
+                  <span aria-hidden="true" class="sr-only">Previous</span>
+                </button>
+                <div class="flex items-center gap-x-1">
+                  <span class="min-h-[32px] min-w-8 flex justify-center items-center border border-gray-200 text-gray-800 py-1 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-white dark:focus:bg-neutral-800">1</span>
+                  <span class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500">of</span>
+                  <span class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500">3</span>
+                </div>
+                <button type="button" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                  <span aria-hidden="true" class="sr-only">Next</span>
+                  <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg>
+                </button>
+              </nav>
             </div>
           </div>
         </div>

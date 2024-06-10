@@ -32,7 +32,7 @@
 
       <?php
       include "crud/koneksi.php";
-      $sql = "SELECT u.nama, r.alamat, u.email, u.notelp FROM rincian r JOIN user u ON r.id_user = u.id;";
+      $sql = "SELECT u.nama, r.alamat, u.email, u.notelp FROM rincian r JOIN user u ON r.id_user = u.id LIMIT 9;";
       $rs = mysqli_query($conn, $sql);
       $i = 1;
       while ($row = mysqli_fetch_assoc($rs)) :
@@ -52,12 +52,12 @@
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-        <?php
+          <?php
           echo $row["email"];
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-        <?php
+          <?php
           echo $row["notelp"];
           ?>
         </td>

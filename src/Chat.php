@@ -79,9 +79,7 @@ $result = mysqli_query($conn, $sql);
         <p class="p-4 text-center border">
           <a href="DataMobil.php" class="font-semibold text-white">Data Mobil</a>
         </p>
-        <p class="p-4 text-center border">
-          <a href="inventaris.php" class="font-semibold text-white">Inventaris</a>
-        </p>
+
         <p class="p-4 text-center border">
           <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
         </p>
