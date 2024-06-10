@@ -36,25 +36,26 @@
     <?php
       include "crud/koneksi.php";
       $sql = "SELECT 
-      u.nama,
-      r.alamat,
-      v.nama_mobil,
-      r.tanggalAwal,
-      r.tanggalTujuan,
-      p.Status
-  JOIN 
-      user u ON p.id_user = u.id
-  JOIN 
-      Vehicle v ON p.id_vehicle = v.id
-  JOIN 
-      pembayaran p ON p.id_pembayaran = p.id
-  JOIN 
-      rincian r ON p.id_rincian = r.id_pemesanan";
+                u.nama,
+                r.alamat,
+                v.nama_mobil,
+                r.tanggalAwal AS tanggal_rental,
+                p.Status AS status_pembayaran,
+                rf.status AS status_refund
+              FROM 
+                rincian r
+              JOIN 
+                user u ON r.id_user = u.id
+              JOIN 
+                Vehicle v ON r.id_vehicle = v.id
+              JOIN 
+                pembayaran p ON r.id = p.id_rincian
+              LEFT JOIN 
+                refund rf ON r.id = rf.id_rincian";
       $rs = mysqli_query($conn, $sql);
       $i = 1;
       while ($row = mysqli_fetch_assoc($rs)) :
-
-      ?>
+    ?>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <?php echo $i++; ?>
         </td>
