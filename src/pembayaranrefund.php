@@ -122,8 +122,9 @@
       <div class="flex flex-col w-full mx-auto">
         <div class="-m-1.5 overflow-x-auto">
           <div class="p-1.5 min-w-full  inline-block align-middle">
-            <div class="container mx-auto overflow-hidden border rounded-lg dark:border-neutral-700">
+            <h1 class="mb-5 text-2xl font-bold text-center text-white">Pembayaran</h1>
 
+            <div class="container mx-auto overflow-hidden border rounded-lg dark:border-neutral-700">
               <?php include("layout/tablePembayaran.php") ?>
               <nav class="flex items-center gap-x-1">
                 <button type="button" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
@@ -145,6 +146,8 @@
                 </button>
               </nav>
             </div>
+
+            <h1 class="mt-10 text-2xl font-bold text-center text-white">Refund</h1>
 
             <!-- Refund -->
             <div class="container mx-auto mt-10 overflow-hidden border rounded-lg dark:border-neutral-700">

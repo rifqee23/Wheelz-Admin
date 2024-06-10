@@ -82,7 +82,7 @@
         </div>
       </section>
 
-      <section class="mt-16 2xl:ms-80 bg-white 2xl:max-w-[70rem] lg:max-w-3xl mx-auto w-full">
+      <section class="mt-16 2xl:ms-96 bg-white 2xl:max-w-[70rem] lg:max-w-3xl mx-auto w-full">
         <div class="relative">
           <div class="absolute inset-0 bg-root opacity-60"></div>
           <span class="relative z-10 font-bold ps-4">Akun yang sedang login</span>

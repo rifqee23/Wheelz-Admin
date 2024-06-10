@@ -711,8 +711,16 @@ video {
   margin-inline-start: 1rem;
 }
 
+.-mt-5 {
+  margin-top: -1.25rem;
+}
+
 .mt-0 {
   margin-top: 0px;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-16 {
@@ -729,10 +737,6 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
 }
 
 .block {
@@ -1877,8 +1881,8 @@ video {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:ms-80 {
-    margin-inline-start: 20rem;
+  .\32xl\:ms-96 {
+    margin-inline-start: 24rem;
   }
 
   .\32xl\:mt-0 {
