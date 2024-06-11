@@ -252,9 +252,9 @@ $result = mysqli_query($conn, $sql);
                           </div>
 
                           <div>
-                            <button type="button" class="inline-flex items-center text-sm font-semibold text-blue-600 border border-transparent rounded-lg gap-x-2 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400">
+                            <a href="crud/deleteDataMobil.php?id=<?php echo $row["id"] ?>" type="button" class="inline-flex items-center text-sm font-semibold text-blue-600 border border-transparent rounded-lg gap-x-2 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400">
                               Delete
-                            </button>
+                            </a>
 
                           </div>
                         </td>

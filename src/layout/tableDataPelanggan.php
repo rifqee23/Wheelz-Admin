@@ -32,7 +32,7 @@
 
       <?php
       include "crud/koneksi.php";
-      $sql = "SELECT u.nama, r.alamat, u.email, u.notelp FROM rincian r JOIN user u ON r.id_user = u.id LIMIT 9;";
+      $sql = "SELECT u.nama, u.id, r.alamat, u.email, u.notelp FROM rincian r JOIN user u ON r.id_user = u.id LIMIT 9;";
       $rs = mysqli_query($conn, $sql);
       $i = 1;
       while ($row = mysqli_fetch_assoc($rs)) :
@@ -62,10 +62,10 @@
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-          <div>
-            <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+          <div class="mt-4">
+            <a href="editDataPelanggan.php?id=<?= $row["id"] ?>" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
               Edit
-            </button>
+            </a>
           </div>
 
           <div class="mt-4">
