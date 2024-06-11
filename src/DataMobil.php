@@ -43,6 +43,10 @@ $result = mysqli_query($conn, $sql);
           <a href="DataMobil.php" class="font-semibold text-blue-400">Data Mobil</a>
         </p>
 
+        <p class="hidden p-4 text-center border">
+          <a href="editDataMobil.php" class="font-semibold text-white ">Edit Data Mobil</a>
+        </p>
+
         <p class="p-4 text-center border">
           <a href="DataPelanggan.php" class="font-semibold text-white">Data Pelanggan</a>
         </p>
@@ -242,9 +246,9 @@ $result = mysqli_query($conn, $sql);
 
                         <td class="px-6 py-4 text-sm font-medium whitespace-nowrap text-start">
                           <div>
-                            <button type="button" class="inline-flex items-center text-sm font-semibold text-blue-600 border border-transparent rounded-lg gap-x-2 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400">
+                            <a href="editDataMobil.php?id=<?php echo $row["id"] ?>" type="button" class="inline-flex items-center text-sm font-semibold text-blue-600 border border-transparent rounded-lg gap-x-2 hover:text-blue-800 disabled:opacity-50 disabled:pointer-events-none dark:text-blue-500 dark:hover:text-blue-400">
                               Edit
-                            </button>
+                            </a>
                           </div>
 
                           <div>

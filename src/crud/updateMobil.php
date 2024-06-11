@@ -1,8 +1,10 @@
 <?php
 
 include("koneksi.php");
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 if (isset($_POST['submit'])) {
+    $id = $_POST["id_mobil"];
     $model = $_POST['model'];
     $nopol = $_POST['nopol'];
     $mobil = $_POST['mobil'];
@@ -30,6 +32,9 @@ if (isset($_POST['submit'])) {
     // Mendapatkan ekstensi file
     $file_extension = strtolower(pathinfo($nama_file_asli, PATHINFO_EXTENSION));
 
+    $nama_file_tanpa_ekstensi = pathinfo($nama_file_asli, PATHINFO_FILENAME);
+
+
     // Memeriksa apakah tombol submit ditekan
     if (isset($_POST["submit"])) {
         // Memeriksa apakah file adalah gambar
@@ -43,16 +48,17 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    // Memeriksa apakah file sudah ada
-    if (file_exists($file_in_folder) || file_exists($file_in_folder1)) {
-        echo "File yang Anda unggah sudah ada!";
-        $status = 0;
-    }
-
     // Memeriksa ekstensi file
     if ($file_extension !== "jpg" && $file_extension !== "png" && $file_extension !== "jpeg" && $file_extension !== "gif") {
         echo "Format file tidak didukung";
         $status = 0;
+    }
+
+    $counter = 1;
+    while (file_exists($file_in_folder)) {
+        $nama_file_asli = $nama_file_tanpa_ekstensi . "(" . $counter . ")." . $file_extension;
+        $file_in_folder = $folder . $nama_file_asli;
+        $counter++;
     }
 
     // Menyimpan atau menampilkan pesan jika upload berhasil atau gagal
@@ -70,20 +76,14 @@ if (isset($_POST['submit'])) {
                 echo "Gagal menyalin file ke folder kedua.";
             }
 
-            $sql = "SELECT * FROM Vehicle WHERE nomor_polisi='$nopol'";
-            $result = mysqli_query($conn, $sql);
 
-            if (!mysqli_num_rows($result) > 0) {
 
-                $sql = "INSERT INTO Vehicle (model, nomor_polisi, nama_mobil, seat, car_only, car_only_driver, car_only_driver_fuel, gambar) VALUES ('$model', '$nopol', '$mobil', '$seat', '$only', '$driver', '$fuel', $nama_file_asli)";
 
-                if (mysqli_query($conn, $sql)) {
-                    echo "New record Successfully";
-                } else {
-                    echo "Error : " . $sql . "<br>" . mysqli_error($conn);
-                }
+            $sql = "UPDATE Vehicle SET model='$model', nama_mobil='$mobil', seat='$seat', car_only='$only', car_only_driver='$driver', car_only_driver_fuel='$fuel', gambar='$nama_file_asli' WHERE id='$id'";
+            if (mysqli_query($conn, $sql)) {
+                header("Location: ./../DataMobil.php");
             } else {
-                echo "Nomor plat sudah ada";
+                echo "Error : " . $sql . "<br>" . mysqli_error($conn);
             }
         } else {
             echo "Upload gambar gagal!";
