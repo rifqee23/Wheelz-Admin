@@ -2,11 +2,27 @@
 
 include("./crud/koneksi.php");
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-$sql = "SELECT * FROM Vehicle LIMIT 5";
+$jumlahDataPerHalaman = 5;
+// Fetch data from the database
+$rs = mysqli_query($conn, "SELECT COUNT(*) AS total FROM Vehicle");
+$row = mysqli_fetch_assoc($rs);
+$totalRows = $row['total'];
+
+// Calculate the number of pages
+$jumlahHalaman = ceil($totalRows / $jumlahDataPerHalaman);
+
+$halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+$awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
+// Fetch data for the current page
+$sql = "SELECT * FROM Vehicle LIMIT $awalData, $jumlahDataPerHalaman";
 $result = mysqli_query($conn, $sql);
 
 ?>
+
 
 
 
@@ -149,9 +165,10 @@ $result = mysqli_query($conn, $sql);
                     <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Car Only Driver Fuel</label>
                     <input type="text" id="input-label" name="fuel" oninput="formatNumber(this)" class="block w-full px-4 py-3 mb-2 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 600.000,00">
 
+                    <div id="selectedBanner"></div>
                     <div class="max-w-sm">
                       <label for="file-input" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Input Photo</label>
-                      <input type="file" name="gambar" id="file-input" class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 dark:file:bg-neutral-700 dark:file:text-neutral-400">
+                      <input type="file" name="gambar" id="img" class="block w-full text-sm border border-gray-200 rounded-lg shadow-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 file:bg-gray-50 file:border-0 file:me-4 file:py-3 file:px-4 dark:file:bg-neutral-700 dark:file:text-neutral-400">
                     </div>
 
                   </div>
@@ -266,31 +283,41 @@ $result = mysqli_query($conn, $sql);
                 </tbody>
               </table>
 
-              <nav class="flex items-center gap-x-1">
-                <button type="button" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
-                  <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m15 18-6-6 6-6"></path>
-                  </svg>
-                  <span aria-hidden="true" class="sr-only">Previous</span>
-                </button>
-                <div class="flex items-center gap-x-1">
-                  <span class="min-h-[32px] min-w-8 flex justify-center items-center border border-gray-200 text-gray-800 py-1 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-white dark:focus:bg-neutral-800">1</span>
-                  <span class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500">of</span>
-                  <span class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500">3</span>
-                </div>
-                <button type="button" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
-                  <span aria-hidden="true" class="sr-only">Next</span>
-                  <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m9 18 6-6-6-6"></path>
-                  </svg>
-                </button>
+              <nav id="paginasi" class="flex items-center gap-x-1 ms-5">
+                <?php if ($halamanAktif > 1) : ?>
+                  <a href="?halaman=<?php echo $halamanAktif - 1; ?>" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                    <span aria-hidden="true" class="sr-only">Previous</span>
+                  </a>
+                <?php endif; ?>
+
+                <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                  <a href="?halaman=<?php echo $i; ?>" class="min-h-[32px] min-w-8 flex justify-center items-center border border-gray-200 text-gray-800 py-1 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-50 <?php echo ($i == $halamanAktif) ? 'bg-gray-100' : ''; ?> dark:border-neutral-700 dark:text-white dark:focus:bg-neutral-800"><?php echo $i; ?></a>
+                <?php endfor; ?>
+
+                <?php if ($halamanAktif < $jumlahHalaman) : ?>
+                  <a href="?halaman=<?php echo $halamanAktif + 1; ?>" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                    <span aria-hidden="true" class="sr-only">Next</span>
+                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </a>
+                <?php endif; ?>
+
+                <div class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500"><?php echo $halamanAktif; ?> of <?php echo $jumlahHalaman; ?></div>
               </nav>
+
+
             </div>
           </div>
         </div>
       </div>
     </main>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <script src="https://kit.fontawesome.com/c4ce7ec2a0.js" crossorigin="anonymous"></script>
 
@@ -306,6 +333,36 @@ $result = mysqli_query($conn, $sql);
 
       // Update the input value with the formatted number
       input.value = formattedNum;
+    }
+
+    var selDiv = "";
+    var storedFiles = [];
+    $(document).ready(function() {
+      $("#img").on("change", handleFileSelect);
+      selDiv = $("#selectedBanner");
+    });
+
+    function handleFileSelect(e) {
+      var files = e.target.files;
+      var filesArr = Array.prototype.slice.call(files);
+      filesArr.forEach(function(f) {
+        if (!f.type.match("image.*")) {
+          return;
+        }
+        storedFiles.push(f);
+
+        var reader = new FileReader();
+        reader.onload = function(e) {
+          var html =
+            '<img src="' +
+            e.target.result +
+            "\" data-file='" +
+            f.name +
+            "alt='Category Image' height='200px' width='200px'>";
+          selDiv.html(html);
+        };
+        reader.readAsDataURL(f);
+      });
     }
   </script>
 </body>

@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
 
       //   Menyalin file ke folder kedua
       if (copy($file_in_folder, $file_in_folder1)) {
-        header("Location: ./../DataMobil.php");
+        echo "berhasil menyalin";
       } else {
         header("Location: ./../DataMobil.php?alert=gagal_salin");
       }
@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
 
     // Jalankan query untuk menambahkan data baru
     if (mysqli_query($conn, $sql)) {
-      echo "New record successfully created.";
+      header("Location: ./../DataMobil.php");
     } else {
       echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }

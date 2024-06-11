@@ -45,6 +45,7 @@
       include "crud/koneksi.php";
       $sql = "SELECT 
       p.bukti_bayar,
+      p.id,
       u.nama,
       p.ref,
       v.nama_mobil,
@@ -105,15 +106,27 @@
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <div>
-            <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Konfirmasi
-            </button>
+            <?php if ($row["Status"] == 'pending') : ?>
+              <form method="POST" action="crud/updateStatusPembayaran.php">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <input type="hidden" name="status" value="Verified">
+                <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+                  Konfirmasi
+                </button>
+              </form>
+            <?php endif; ?>
           </div>
 
           <div class="mt-4">
-            <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Tolak
-            </button>
+            <?php if ($row["Status"] == 'Pending') : ?>
+              <form method="POST" action="crud/updateStatusPembayaran.php">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <input type="hidden" name="status" value="Rejected">
+                <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+                  Tolak
+                </button>
+              </form>
+            <?php endif; ?>
           </div>
         </td>
     </tr>

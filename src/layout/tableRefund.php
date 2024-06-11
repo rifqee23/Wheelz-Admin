@@ -63,15 +63,28 @@
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <div>
-            <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Konfirmasi
-            </button>
+            <?php if ($row["status"] == 'belum di refund') : ?>
+              <form method="POST" action="crud/updateStatusRefund.php">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <input type="hidden" name="status" value="Accepted">
+                <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+                  Konfirmasi
+                </button>
+              </form>
+            <?php endif; ?>
           </div>
 
           <div class="mt-4">
-            <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-              Tolak
-            </button>
+            <?php if ($row["status"] == 'belum di refund') : ?>
+              <form method="POST" action="crud/updateStatusRefund.php">
+                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                <input type="hidden" name="status" value="Rejected">
+                <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+                  Tolak
+                </button>
+              </form>
+
+            <?php endif; ?>
           </div>
         </td>
     </tr>

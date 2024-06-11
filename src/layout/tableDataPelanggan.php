@@ -9,9 +9,7 @@
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
         Nama
       </th>
-      <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
-        Alamat
-      </th>
+
       <th scope="col" class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-start dark:text-neutral-500">
         Email
       </th>
@@ -32,7 +30,19 @@
 
       <?php
       include "crud/koneksi.php";
-      $sql = "SELECT u.nama, u.id, r.alamat, u.email, u.notelp FROM rincian r JOIN user u ON r.id_user = u.id LIMIT 9;";
+      $jumlahDataPerHalaman = 5;
+      // Fetch data from the database
+      $rs = mysqli_query($conn, "SELECT COUNT(*) AS total FROM user");
+      $row = mysqli_fetch_assoc($rs);
+      $totalRows = $row['total'];
+
+      // Calculate the number of pages
+      $jumlahHalaman = ceil($totalRows / $jumlahDataPerHalaman);
+
+      $halamanAktif = (isset($_GET["halaman"])) ? $_GET["halaman"] : 1;
+      $awalData = ($jumlahDataPerHalaman * $halamanAktif) - $jumlahDataPerHalaman;
+
+      $sql = "SELECT * FROM user LIMIT $awalData, $jumlahDataPerHalaman;";
       $rs = mysqli_query($conn, $sql);
       $i = 1;
       while ($row = mysqli_fetch_assoc($rs)) :
@@ -46,11 +56,7 @@
           echo $row["nama"];
           ?>
         </td>
-        <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-          <?php
-          echo $row["alamat"];
-          ?>
-        </td>
+
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
           <?php
           echo $row["email"];
@@ -69,9 +75,9 @@
           </div>
 
           <div class="mt-4">
-            <button class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+            <a href="crud/deleteDataPelanggan.php?id=<?= $row["id"] ?>" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
               Delete
-            </button>
+            </a>
           </div>
         </td>
     </tr>

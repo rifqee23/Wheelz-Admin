@@ -127,24 +127,30 @@
             <div class="overflow-hidden border rounded-lg dark:border-neutral-700">
 
               <?php include("layout/tableDataPelanggan.php") ?>
-              <nav class="flex items-center gap-x-1">
-                <button type="button" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
-                  <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m15 18-6-6 6-6"></path>
-                  </svg>
-                  <span aria-hidden="true" class="sr-only">Previous</span>
-                </button>
-                <div class="flex items-center gap-x-1">
-                  <span class="min-h-[32px] min-w-8 flex justify-center items-center border border-gray-200 text-gray-800 py-1 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:border-neutral-700 dark:text-white dark:focus:bg-neutral-800">1</span>
-                  <span class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500">of</span>
-                  <span class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500">3</span>
-                </div>
-                <button type="button" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
-                  <span aria-hidden="true" class="sr-only">Next</span>
-                  <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m9 18 6-6-6-6"></path>
-                  </svg>
-                </button>
+              <nav id="paginasi" class="flex items-center gap-x-1 ms-5">
+                <?php if ($halamanAktif > 1) : ?>
+                  <a href="?halaman=<?php echo $halamanAktif - 1; ?>" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m15 18-6-6 6-6"></path>
+                    </svg>
+                    <span aria-hidden="true" class="sr-only">Previous</span>
+                  </a>
+                <?php endif; ?>
+
+                <?php for ($i = 1; $i <= $jumlahHalaman; $i++) : ?>
+                  <a href="?halaman=<?php echo $i; ?>" class="min-h-[32px] min-w-8 flex justify-center items-center border border-gray-200 text-gray-800 py-1 px-3 text-sm rounded-lg focus:outline-none focus:bg-gray-50 <?php echo ($i == $halamanAktif) ? 'bg-gray-100' : ''; ?> dark:border-neutral-700 dark:text-white dark:focus:bg-neutral-800"><?php echo $i; ?></a>
+                <?php endfor; ?>
+
+                <?php if ($halamanAktif < $jumlahHalaman) : ?>
+                  <a href="?halaman=<?php echo $halamanAktif + 1; ?>" class="min-h-[32px] min-w-8 py-2 px-2 inline-flex justify-center items-center gap-x-2 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">
+                    <span aria-hidden="true" class="sr-only">Next</span>
+                    <svg class="flex-shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </a>
+                <?php endif; ?>
+
+                <div class="min-h-[32px] flex justify-center items-center text-gray-500 py-1.5 px-1.5 text-sm dark:text-neutral-500"><?php echo $halamanAktif; ?> of <?php echo $jumlahHalaman; ?></div>
               </nav>
             </div>
           </div>

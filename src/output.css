@@ -719,6 +719,10 @@ video {
   margin-inline-start: 1rem;
 }
 
+.ms-5 {
+  margin-inline-start: 1.25rem;
+}
+
 .mt-0 {
   margin-top: 0px;
 }
@@ -1094,6 +1098,11 @@ video {
   background-color: rgb(187 247 208 / var(--tw-bg-opacity));
 }
 
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(22 35 69 / var(--tw-bg-opacity));
@@ -1286,6 +1295,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-xs {

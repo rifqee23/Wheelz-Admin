@@ -93,25 +93,35 @@
                         </button>
                     </div>
 
-                    <form action="./crud/upload_gambar.php" method="post" enctype="multipart/form-data">
+                    <form action="./crud/updateDatapelanggan.php" method="post" enctype="multipart/form-data">
                         <div class="flex justify-center">
                             <div class="">
                                 <div class="max-w-sm p-4">
                                     <?php
+                                    include "crud/koneksi.php";
+                                    $id = $_GET["id"];
+
+                                    $sql = "SELECT * FROM user  WHERE id ='$id'";
+                                    $result = mysqli_query($conn, $sql);
+
+                                    while ($row = mysqli_fetch_array($result)) :
 
                                     ?>
-                                    <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Nama</label>
-                                    <input type="text" id="input-label" name="nama" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi">
 
-                                    <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Alamat</label>
-                                    <input type="text" id="input-label" name="alamat" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: BE 1234 AB">
+                                        <input type="hidden" name="id" value="<?= $row["id"] ?>">
+                                        <label for="input-label" class="block mb-2 text-sm font-medium dark:text-white">Nama</label>
+                                        <input type="text" id="input-label" name="nama" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" value="<?= $row["nama"] ?>">
 
-                                    <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Email</label>
-                                    <input type="text" id="input-label" name="email" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: Audi AeT">
 
-                                    <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">No telephone</label>
-                                    <input type="number" id="input-label" name="nohp" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="cth: 4">
+                                        <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">Email</label>
+                                        <input type="text" id="input-label" name="email" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" value="<?= $row["email"] ?>" readonly>
 
+                                        <label for="input-label" class="block mt-2 mb-2 text-sm font-medium dark:text-white">No telephone</label>
+                                        <input type="number" id="input-label" name="nohp" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" value="<?= $row["notelp"] ?>">
+                                        <div class="flex justify-end w-full mt-5">
+                                            <button type="submit" name="submit" class="px-4 py-2 text-xl font-semibold text-white bg-green-500 rounded-xl">Update</button>
+                                        </div>
+                                    <?php endwhile; ?>
                                 </div>
                             </div>
                         </div>
