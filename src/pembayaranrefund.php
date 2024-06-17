@@ -1,3 +1,11 @@
+<?php session_start();
+
+if (!isset($_SESSION['user'])) {
+  header("Location: login.php");
+  exit();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -122,7 +130,7 @@
       <div class="flex flex-col w-full mx-auto">
         <div class="-m-1.5 overflow-x-auto">
           <div class="p-1.5 min-w-full  inline-block align-middle">
-            <h1 class="mb-5 text-2xl font-bold text-center text-white">Pembayaran</h1>
+            <h1 class="mb-5 text-2xl font-bold text-center">Pembayaran</h1>
 
             <div class="container mx-auto overflow-hidden border rounded-lg dark:border-neutral-700">
               <?php include("layout/tablePembayaran.php") ?>

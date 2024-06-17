@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['user'])) {
+  header("Location: login.php");
+  exit();
+}
+
 
 include("./crud/koneksi.php");
 
@@ -42,10 +49,17 @@ $result = mysqli_query($conn, $sql);
     <nav class="flex items-center justify-between mx-auto max-w-[115rem]">
       <a href="#" class="text-2xl font-bold text-white">Wheelz Collaboration</a>
 
-      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
-        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-        Admin
-      </a>
+      <div class="flex items-center gap-5">
+        <a href="logout.php">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+            <path fill="#12ed87" d="M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm2-7h7v2H6v3l-5-4l5-4z" />
+          </svg>
+        </a>
+        <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
+          <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+          Admin
+        </a>
+      </div>
     </nav>
   </header>
 
@@ -188,6 +202,8 @@ $result = mysqli_query($conn, $sql);
       <div class="flex flex-col">
         <div class="-m-1.5 overflow-x-auto">
           <div class="p-1.5 min-w-full  inline-block align-middle">
+            <h1 class="mb-5 text-2xl font-bold text-center ">Data Mobil </h1>
+
             <div class="overflow-hidden border rounded-lg dark:border-neutral-700">
 
               <table class="w-full divide-y divide-gray-200 dark:divide-neutral-700">

@@ -18,10 +18,10 @@
             <h1 class="mt-5 text-2xl">Login</h1>
             <p class="mt-2 text-slate-400">Input your username and password.</p>
             <div class="mt-5">
-                <form action="db/user/login.php" method="post">
+                <form action="crud/admin/login.php" method="post">
                     <div>
                         <label class="block text-lg font-medium" for="">Username</label>
-                        <input class="w-full px-4 py-2 mt-2 rounded-lg outline outline-1 outline-slate-300 focus:outline-blue-500" name="username" type="text" placeholder="rfq">
+                        <input class="w-full px-4 py-2 mt-2 rounded-lg outline outline-1 outline-slate-300 focus:outline-blue-500" name="username" type="text" placeholder="Your username">
                     </div>
 
                     <div class="mt-5">

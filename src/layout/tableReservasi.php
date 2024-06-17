@@ -33,26 +33,8 @@
 
       <?php
       include "crud/koneksi.php";
-      $sql = "SELECT 
-      u.nama, 
-      r.alamat, 
-      v.nama_mobil, 
-      r.tanggalAwal, 
-      r.tanggalTujuan, 
-      CASE 
-          WHEN p.status = 'pending' THEN 'sedang di proses'
-          WHEN p.status = 'confirmed' THEN 'selesai'
-          ELSE p.status 
-      END AS status
-  FROM 
-      pembayaran p
-  JOIN 
-      user u ON p.id_user = u.id
-  JOIN 
-      Vehicle v ON p.id_vehicle = v.id
-  JOIN 
-      rincian r ON p.id_rincian = r.id_pemesanan
-  LIMIT 9";
+      $sql = "SELECT u.nama, r.alamat, v.nama_mobil, r.tanggalAwal, r.tanggalTujuan, CASE WHEN p.status = 'Verified' THEN 'Sedang dipinjam' WHEN p.status = 'Done' THEN 'selesai' END AS status FROM pembayaran p JOIN user u ON p.id_user = u.id JOIN Vehicle v ON p.id_vehicle = v.id JOIN rincian r ON p.id_rincian = r.id_pemesanan WHERE p.status IN ('Verified', 'done') LIMIT 9;
+  ";
       $rs = mysqli_query($conn, $sql);
       $i = 1;
       while ($row = mysqli_fetch_assoc($rs)) :

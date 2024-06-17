@@ -105,28 +105,41 @@
           ?>
         </td>
         <td class="px-6 py-4 text-sm font-medium text-gray-800 whitespace-nowrap dark:text-neutral-200">
-          <div>
-            <?php if ($row["Status"] == 'pending') : ?>
-              <form method="POST" action="crud/updateStatusPembayaran.php">
-                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                <input type="hidden" name="status" value="Verified">
-                <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-                  Konfirmasi
-                </button>
-              </form>
-            <?php endif; ?>
-          </div>
+          <div class="flex flex-col items-center justify-center">
+            <div>
+              <?php if ($row["Status"] == 'pending') : ?>
+                <form method="POST" action="crud/updateStatusPembayaran.php">
+                  <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                  <input type="hidden" name="status" value="Verified">
+                  <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+                    Konfirmasi
+                  </button>
+                </form>
+              <?php else : ?>
+                <form class="mt-4" method="POST" action="crud/updateStatusPembayaran.php">
+                  <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                  <input type="hidden" name="status" value="Done">
+                  <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+                    Done
+                  </button>
+                </form>
+              <?php endif; ?>
+            </div>
 
-          <div class="mt-4">
-            <?php if ($row["Status"] == 'Pending') : ?>
-              <form method="POST" action="crud/updateStatusPembayaran.php">
-                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                <input type="hidden" name="status" value="Rejected">
-                <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
-                  Tolak
-                </button>
-              </form>
-            <?php endif; ?>
+            <div class="mt-4">
+              <?php if ($row["Status"] == 'pending') : ?>
+                <form method="POST" action="crud/updateStatusPembayaran.php">
+                  <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                  <input type="hidden" name="status" value="Rejected">
+                  <button type="submit" class="text-sm font-semibold text-blue-600 hover:text-blue-800">
+                    Tolak
+                  </button>
+                </form>
+
+              <?php endif; ?>
+            </div>
+
+
           </div>
         </td>
     </tr>

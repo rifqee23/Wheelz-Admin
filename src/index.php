@@ -1,3 +1,11 @@
+<?php session_start();
+
+if (!isset($_SESSION['user'])) {
+  header("Location: login.php");
+  exit();
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -13,10 +21,17 @@
     <nav class="flex items-center justify-between mx-auto max-w-[115rem]">
       <a href="#" class="text-2xl font-bold text-white">Wheelz Collaboration</a>
 
-      <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
-        <i class="fa-solid fa-user" style="color: #ffffff;"></i>
-        Admin
-      </a>
+      <div class="flex items-center gap-5">
+        <a href="logout.php">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+            <path fill="#12ed87" d="M4 18h2v2h12V4H6v2H4V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1zm2-7h7v2H6v3l-5-4l5-4z" />
+          </svg>
+        </a>
+        <a href="#" class="flex items-center gap-2 text-2xl font-bold text-white">
+          <i class="fa-solid fa-user" style="color: #ffffff;"></i>
+          Admin
+        </a>
+      </div>
     </nav>
   </header>
 
@@ -77,12 +92,13 @@
             </p>
           </div>
           <div class="w-[40%]">
+
             <img src="asset/Iconly/Bold/car.svg" alt="" />
           </div>
         </div>
       </section>
 
-      <section class="mt-16 2xl:ms-96 bg-white 2xl:max-w-[70rem] lg:max-w-3xl mx-auto w-full">
+      <section class="mt-16  bg-white 2xl:max-w-[70rem] lg:max-w-3xl mx-auto w-full">
         <div class="relative">
           <div class="absolute inset-0 bg-root opacity-60"></div>
           <span class="relative z-10 font-bold ps-4">Akun yang sedang login</span>
